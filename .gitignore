@@ -1,0 +1,13 @@
+# 系統與暫存檔案
+.DS_Store
+__pycache__/
+*.pyc
+
+# 敏感憑證與資料
+*.json
+WTNC_log.txt
+
+# 報表檔
+*.xlsx
+*.xls
+/tmp/
