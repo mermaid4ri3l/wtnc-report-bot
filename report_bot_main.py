@@ -11,6 +11,7 @@ import chromedriver_autoinstaller
 import easyocr
 
 from datetime import datetime as dt, timedelta
+from tempfile import mkdtemp  # ✅ 請務必加上這一行！
 from google.oauth2.service_account import Credentials
 from gspread.utils import rowcol_to_a1
 from selenium import webdriver
@@ -66,6 +67,7 @@ def main():
 
         options = webdriver.ChromeOptions()
         options.add_argument("--start-maximized")
+        options.add_argument(f"--user-data-dir={mkdtemp()}")  # ✅ 加入這一行
         prefs = {"download.default_directory": DOWNLOAD_DIR}
         options.add_experimental_option("prefs", prefs)
         chromedriver_autoinstaller.install()
