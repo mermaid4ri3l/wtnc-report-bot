@@ -67,7 +67,6 @@ def main():
 
         options = webdriver.ChromeOptions()
         options.add_argument("--start-maximized")
-        options.add_argument(f"--user-data-dir={mkdtemp()}")  # ✅ 加入這一行
         prefs = {"download.default_directory": DOWNLOAD_DIR}
         options.add_experimental_option("prefs", prefs)
         chromedriver_autoinstaller.install()
