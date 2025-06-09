@@ -66,11 +66,10 @@ def main():
         os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless=new")
         options.add_argument("--start-maximized")
 
-        # ✅ 只有在 Railway 時才加 user-data-dir
-        if os.getenv("RAILWAY_ENVIRONMENT"):
+        # ✅ 只有本機才加 user-data-dir
+        if not os.getenv("RAILWAY_ENVIRONMENT"):
             options.add_argument(f"--user-data-dir={mkdtemp()}")
 
         # ✅ 設定下載資料夾
