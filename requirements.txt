@@ -1,0 +1,10 @@
+selenium
+chromedriver_autoinstaller
+opencv-python
+numpy
+easyocr
+gspread
+pandas
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
